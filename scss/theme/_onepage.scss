@@ -6,6 +6,8 @@
 
 .modular-features {
   text-align: center;
+  position: relative;
+  z-index: 2;
 
   &.offset-box {
     .frame-box {

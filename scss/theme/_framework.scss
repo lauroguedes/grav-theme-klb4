@@ -50,6 +50,11 @@ section.section {
     font-size: 2.5rem;
   }
 
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
   &.hero-fullscreen {
     min-height: 100vh;
   }
@@ -127,7 +132,7 @@ section.section {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1;
 
   .overlay-light & {
     background: rgba(#fff, 0.4);
@@ -141,8 +146,8 @@ section.section {
     background: rgba(#000, 0.4);
   }
 
-  .overlay-dark-gradient & {
-    background: linear-gradient(to bottom, rgba(#000,0.5), rgba(#000,0.2));
+  &.overlay-dark-gradient {
+    background: linear-gradient(to bottom, rgba($primary-color,0.8), rgba($primary-color-2,0.8));
   }
 }
 
