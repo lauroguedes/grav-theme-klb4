@@ -1,5 +1,14 @@
 .search-input, [data-grav-field="array"] input, [data-grav-field="array"] textarea {
   @extend .form-input;
+  //custom plugin SimpleSearch
+  width: 60% !important;
+  height: 80px;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 24px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom: 3px solid $primary-color;
 }
 
 .button {

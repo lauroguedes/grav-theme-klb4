@@ -1,6 +1,18 @@
 {% import 'macros/macros.html.twig' as macros %}
-
+{% set show_external_links = theme_var('header-showexternallinks') %}
+{% set external_links = theme_var('header-externallinks') %}
 <ul {{ tree ? 'class="tree"' : '' }}>
-    {{ macros.nav_loop(pages) }}
+    {% if show_external_links %}
+        {% for item in external_links %}
+            <li class="external-links-menu">
+                <a href="{{ item.url }}" {% if item.target %}target="_blank"{% endif %}>
+                    <i class="fa {{ item.icon }}"></i>
+                    <span>{{ item.text }}</span>
+                </a>
+            </li>
+        {% endfor %}
+      {% else %}
+        {{ macros.nav_loop(pages) }}
+      {% endif %}
 </ul>
 

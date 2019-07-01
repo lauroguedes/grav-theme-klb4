@@ -310,3 +310,9 @@ pt-BR:
         HEADLINE: Arquivos
       SYNDICATE:
         HEADLINE: Corporação
+  PLUGIN_SIMPLESEARCH:
+    SEARCH_PLACEHOLDER: "O que você procura..."
+    SEARCH_RESULTS: "Resultados da pesquisa"
+    SEARCH_RESULTS_SUMMARY_SINGULAR: "Pesquisa: <strong>%s</strong>. Foi encontrado 1 resultado"
+    SEARCH_RESULTS_SUMMARY_PLURAL: "Pesquisa: <strong>%s</strong>. Foram encontrados %s resultados"
+    SEARCH_FIELD_MINIMUM_CHARACTERS: "É exigido no mínimo <strong>%s</strong> caracteres para efeturar a pesquisa"

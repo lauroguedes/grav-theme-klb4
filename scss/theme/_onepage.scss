@@ -1,5 +1,6 @@
 .modular-hero {
   #to-start {
+    z-index: 2;
     bottom: 3.5rem;
   }
 }
@@ -11,7 +12,7 @@
 
   &.offset-box {
     .frame-box {
-      margin: -3rem (-1rem - $layout-spacing) 3rem;
+      margin: 3rem (-1rem - $layout-spacing) 3rem;
       padding: 1rem 1rem;
       background: $light-color;
       box-shadow: 0 0 75px 0 rgba($dark-color, 0.1);

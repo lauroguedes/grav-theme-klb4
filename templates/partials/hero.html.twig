@@ -2,6 +2,7 @@
     {% if page.header.hero_overlay %} <div class="image-overlay overlay-dark-gradient"></div> {% endif %}
     <section class="container {{ grid_size }}" style="text-align: {{ page.header.hero_align|default('center') }}">
         {{ content|raw }}
+        {% include 'partials/simplesearch_searchbox.html.twig' %}
     </section>
     <i id="to-start" class="pulse fa fa-angle-down"></i>
 </section>
