@@ -10,3 +10,20 @@ blog-page: '/blog'
 spectre:
   exp: false
   icons: false
+header-showexternallinks: true
+header-externallinks:
+  -
+    text: 'GitHub'
+    url: 'https://github.com/lauroguedes/grav-theme-klb4'
+    icon: 'fa-github'
+    target: true
+  -
+    text: 'Issues'
+    url: 'https://github.com/lauroguedes/grav-theme-klb4/issues'
+    icon: 'fa-bug'
+    target: true
+  -
+    text: 'Login'
+    url: '/login'
+    icon: 'fa-lock'
+    target: false

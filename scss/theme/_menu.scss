@@ -91,4 +91,20 @@
       transform: translateY(-10px);
     }
   }
+
+  //Extenal links options
+  .external-links-menu a{ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: space-between;
+    transition: all 0.3s linear;
+    &:hover{
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+    i.fa{
+      font-size: 26px;
+    }
+  }
 }

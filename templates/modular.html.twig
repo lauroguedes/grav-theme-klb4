@@ -6,6 +6,10 @@
 
 {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
 
+{% set show_external_links = theme_var('header-showexternallinks') %}
+
+{% set external_links = theme_var('header-externallinks') %}
+
 {% block javascripts %}
     {% if show_onpage_menu %}
         {% do assets.add('theme://js/singlepagenav.min.js') %}
@@ -45,7 +49,20 @@
         {% endfor %}
         </ul>
     {% else %}
-        {{  parent() }}
+        {% if show_external_links %}
+            <ul class="navigation">
+                {% for item in external_links %}
+                    <li class="external-links-menu">
+                        <a href="{{ item.url }}" {% if item.target %}target="_blank"{% endif %}>
+                            <i class="fa {{ item.icon }}"></i>
+                            <span>{{ item.text }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {{ parent() }}
+        {% endif %}
     {% endif %}
 {% endblock %}
 
