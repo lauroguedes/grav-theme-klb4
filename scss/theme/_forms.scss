@@ -39,6 +39,13 @@ form {
 
 #grav-login {
 
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+
+  h1 {
+    font-size: 2rem;
+  }
+
   > form {
     margin: 2rem auto 0;
     max-width: 350px;
@@ -50,7 +57,7 @@ form {
     margin: 1rem 0;
   }
   .form-input {
-    text-align: center;
+    text-align: left;
   }
   .button-wrapper {
     text-align: right;
@@ -72,6 +79,15 @@ form {
       @include button-primary;
       float: right;
       margin-left: 4px;
+    }
+  }
+
+  //override registration form
+  &.form-registration {
+    .form-label {
+      display: block;
+      text-align: left;
+      line-height: 0.1rem;
     }
   }
 }

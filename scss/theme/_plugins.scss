@@ -1,0 +1,37 @@
+//SimpleSearch
+.search-wrapper {
+    .search-input, [data-grav-field="array"] input, [data-grav-field="array"] textarea {
+        width: 60%;
+        height: 80px;
+        display: inline-block;
+        border-radius: 15px;
+        font-size: 24px;
+        padding-left: 55px;
+        padding-right: 25px;
+        border-bottom: 3px solid $primary-color;
+    
+        @include breakpoint(sm) {
+            width: 90%;
+        }
+    }
+
+    .icon-search {
+        position: relative;
+        &:before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f002";
+            position: absolute;
+            left: 18px;
+            font-size: 24px;
+            line-height: 80px;
+            color: $secondary-color;
+            z-index: 3;
+        }
+    }
+}

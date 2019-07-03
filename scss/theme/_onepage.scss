@@ -9,6 +9,8 @@
   text-align: center;
   position: relative;
   z-index: 2;
+  //custom when grid-xl grid selected in theme
+  margin: 0 2rem;
 
   &.offset-box {
     .frame-box {
@@ -115,11 +117,15 @@
   }
 }
 
-.modular-text {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-
-  .columns.left {
-    flex-direction: row-reverse;
+.section {
+  &.modular-text {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  
+    .columns.left {
+      flex-direction: row-reverse;
+    }
   }
 }
