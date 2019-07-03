@@ -13,3 +13,9 @@ form:
                      header.body_classes:
                        markdown: true
                        description: 'Available classes in Quark Theme (space separated):<br />`header-fixed`, `header-animated`, `header-dark`, `header-transparent`, `sticky-footer`'
+                     header.access:
+                       type: array
+                       label: Permission
+                       placeholder_key: key
+                       placeholder_value: value(0 or 1)
+                       help: 'Enter in the key field the permission and in field value 0 to disable and1 to enable. Permissions: moderador, colaborador, parceiro, cliente'

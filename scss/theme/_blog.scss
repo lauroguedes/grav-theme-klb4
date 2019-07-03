@@ -7,6 +7,15 @@
   }
 }
 
+/** Page Hero Blog styling override **/
+#blog-hero {
+  h2 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 0.8rem;
+  }
+}
+
 /** Breadcrumbs styling **/
 #breadcrumbs {
   padding-left: 0;
@@ -42,7 +51,9 @@
   .bricklayer-column {
     padding-left: 0px;
     padding-right: 25px;
-
+    &:last-child {
+      padding-right: 0;
+    }
   }
   .card {
     margin-bottom: 25px;
@@ -110,5 +121,12 @@ ul.pagination {
     .label {
       vertical-align: text-top;
     }
+  }
+}
+
+.section {
+  &.blog-listing {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

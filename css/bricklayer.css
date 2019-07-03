@@ -23,13 +23,19 @@
 
 @media screen and (min-width: 640px) {
     .bricklayer-column-sizer {
-        width: 100%;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .bricklayer-column-sizer {
+        width: 33.3%;
     }
 }
 
 @media screen and (min-width: 980px) {
     .bricklayer-column-sizer {
-        width: 50%;
+        width: 25%;
     }
 }
 
