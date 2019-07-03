@@ -1,0 +1,15 @@
+{% set show_external_links = theme_var('header-showexternallinks') %}
+{% if show_external_links %}
+    {% if grav.user.authenticated %}
+        <li class="external-links-menu">
+            <a title="Logado como {{ grav.user.fullname ?: grav.user.username }}" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
+                <i class="fa fa-user"></i>
+                <span><strong>{{ grav.user.fullname ?: grav.user.username }}</strong> - {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}</span>
+            </a>
+        </li>
+    {% endif %}
+{% else %}
+    {% if grav.user.authenticated %}
+        <a title="Logado como {{ grav.user.fullname ?: grav.user.username }}" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}"><i class="fa fa-user"></i> {{ grav.user.fullname ?: grav.user.username }} - {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}</a>
+    {% endif %}
+{% endif %}

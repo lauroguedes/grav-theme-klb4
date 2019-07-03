@@ -22,8 +22,3 @@ header-externallinks:
     url: 'https://github.com/lauroguedes/grav-theme-klb4/issues'
     icon: 'fa-bug'
     target: true
-  -
-    text: 'Login'
-    url: '/login'
-    icon: 'fa-lock'
-    target: false

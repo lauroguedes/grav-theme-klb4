@@ -59,6 +59,16 @@
                         </a>
                     </li>
                 {% endfor %}
+                {% if config.plugins.login.enabled and grav.user.username %}
+                    {% include 'partials/login-status.html.twig' %}
+                {% else %}
+                    <li class="external-links-menu">
+                        <a href="/login">
+                            <i class="fa fa-lock"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         {% else %}
             {{ parent() }}
