@@ -35,3 +35,39 @@
         }
     }
 }
+
+//Img Captions
+figure {
+    figcaption {
+        text-align: center;
+        color: $gray-color;
+        font-style: italic;
+        font-size: .7rem;
+    }
+}
+
+//Thumb Ratings override
+.thumb-ratings {
+    .title-thumb {
+        color: $gray-color;
+        font-size: .7rem;
+    }
+    .thumb {
+        &:first-child {
+            background-color: $primary-color !important;
+            transition: all .2s linear;
+            &:hover {
+                transition: all .2s linear;
+                background-color: lighten($success-color, 30%) !important;
+            }
+        }
+        &:last-child {
+            background-color: $secondary-color !important;
+            transition: all .2s linear;
+            &:hover {
+                transition: all .2s linear;
+                background-color: lighten($error-color, 10%) !important;
+            }
+        }
+    }
+}

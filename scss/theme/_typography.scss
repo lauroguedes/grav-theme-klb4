@@ -10,11 +10,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-  font-size: 3rem;
+  font-size: 2.1rem;
+  color: $primary-color;
 }
 
 h2, .h2 {
   font-size: 1.8rem;
+}
+
+h3, .h3 {
+  color: $accent-color;
 }
 
 h6, .h6 {
@@ -30,7 +35,7 @@ h6, .h6 {
 .title-h1h2 {
   h1  {
     font-weight: 100;
-    margin-bottom: 0;
+    margin-bottom: .5rem;
     line-height: 1.1;
 
     strong, bold {
@@ -52,6 +57,19 @@ h6, .h6 {
   }
 }
 
+//override style links
+a {
+  color: $link-color;
+  transition: all .2s linear;
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    color: $link-color-dark;
+    text-decoration: none;
+    transition: all .2s linear;
+  }
+}
 a:focus {
   outline: none !important;
   box-shadow: none !important;

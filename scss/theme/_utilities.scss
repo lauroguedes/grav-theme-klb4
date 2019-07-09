@@ -1,0 +1,11 @@
+//override spectre utilities
+// Divider
+.divider {
+    border-top: $border-width solid $gray-color-light;
+}
+
+//colors variants add
+//text
+@include text-color-variant(".text-accent", $accent-color);
+//backgrond
+@include bg-color-variant(".bg-accent", $accent-color);

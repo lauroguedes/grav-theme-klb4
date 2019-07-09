@@ -1,17 +1,36 @@
+{% set collection = page.collection() %}
+{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
+{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+
 <div class="content-item h-entry">
 
 {% if not hero_image_name %}
-    <div class="content-title text-center">
-        {% include 'partials/blog/title.html.twig' with {title_level: 'h2'} %}
+    <div class="content-title text-left title-h1h2">
+        {% include 'partials/blog/title.html.twig' with {title_level: 'h1', class_over: 'text-uppercase'} %}
         {% if page.header.subtitle %}
-        <h3 >{{ page.header.subtitle }}</h3>
+        <h3>{{ page.header.subtitle }}</h3>
         {% endif %}
         {% include 'partials/blog/date.html.twig' %}
-        {% include 'partials/blog/taxonomy.html.twig' %}
     </div>
 {% endif %}
     <div class="e-content">
         {{ page.content|raw }}
+        {% include 'partials/blog/taxonomy.html.twig' %}
+
+        {% if collection.count > 0 %}
+            <div id="list-children-item" class="e-children">
+                <div class="divider text-center" data-content="TOPICS"></div>
+                {% for child in collection %}
+                    {% include 'partials/blog/title.html.twig' with {title_level: 'h3', page: child, icon: 'file-text-o', class_over: 'title-children'} %}
+                    <div class="divider"></div>
+                {% endfor %}
+            </div>
+            {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+                <div id="listing-footer">
+                    {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+                </div>
+            {% endif %}
+        {% endif %}
     </div>
 
     {% if page.header.continue_link is same as(true) and config.plugins.comments.enabled %}

@@ -2,8 +2,47 @@
 .extra-spacing:not(.col-12), :not(.col12) > .e-content {
   padding-right: 1rem;
 
+  img {
+    padding: 2px;
+    border: $border-width solid $gray-color-light;
+    background: $light-color;
+    transition: all .2s linear;
+    text-align: center;
+    &:hover {
+      opacity: .8;
+      transition: all .2s linear;
+    }
+  }
+
   @include breakpoint(md) {
     padding-right: 0;
+  }
+}
+
+.columns.frame-box {
+  &.content-shadow {
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 0 75px 0 rgba(69,77,93,.1);
+    border-radius: 1rem;
+  }
+}
+
+.e-children {
+  .title-children {
+    margin: 0 !important;
+    padding: 0.8rem 0;
+    a:hover{
+      text-decoration: none;
+      color: $accent-color;
+      transition: all 0.3s linear;
+    }
+  }
+  .divider{
+    border-color: $gray-color-light;
+    &:last-child {
+      display: none;
+    }
   }
 }
 
@@ -22,7 +61,7 @@
   display: flex;
   align-items: center;
   margin-top: -1rem;
-  margin-bottom: 1rem;
+  font-size: .6rem;
 
 
   i {
@@ -99,6 +138,26 @@ ul.pagination {
 
 /** Sidebar specific tweaks **/
 #sidebar {
+
+  //sidebar style
+  .menu {
+    padding-top: 0;
+    box-shadow: none;
+    border-left: 1px solid $gray-color-light;
+    font-size: .7rem;
+  }
+
+  //sticker option anchor plugin override
+  .sticky-wrapper {
+    &.is-sticky {
+      .menu {
+        z-index: 1000 !important;
+        top: 50px !important;
+        height: 350px;
+        overflow: auto;
+      }
+    }
+  }
 
   ul.related-pages {
     box-shadow: none;

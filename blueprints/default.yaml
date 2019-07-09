@@ -10,12 +10,43 @@ form:
               fields:
                 column1:
                    fields:
+
                      header.body_classes:
                        markdown: true
                        description: 'Available classes in Quark Theme (space separated):<br />`header-fixed`, `header-animated`, `header-dark`, `header-transparent`, `sticky-footer`'
+
                      header.access:
                        type: array
                        label: Permission
                        placeholder_key: key
                        placeholder_value: value(0 or 1)
                        help: 'Enter in the key field the permission and in field value 0 to disable and1 to enable. Permissions: moderador, colaborador, parceiro, cliente'
+
+                     header.anchors.active:
+                       type: toggle
+                       label: Active Anchors
+                       highlight: 1
+                       default: 1
+                       help: Active anchors e enable menu sidebar sections
+                       options:
+                         1: PLUGIN_ADMIN.ENABLED
+                         0: PLUGIN_ADMIN.DISABLED
+                       validate:
+                         type: bool
+
+                     header.tagtitle:
+                       type: select
+                       label: Anchor TAG
+                       classes: fancy
+                       default: h2
+                       help: (Plugin Anchor) Select the tag title
+                       options:
+                         h1: H1
+                         h2: H2
+                         h3: H3
+                         h4: H4
+
+                     header.terms:
+                       type: text
+                       label: Hide Anchor Terms
+                       help: (Pligin Anchor) Select the titile you wish hidden. Separete each term with a comma

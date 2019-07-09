@@ -1,5 +1,8 @@
 <span class="blog-date">
     <time class="dt-published" datetime="{{ page.date|date("c") }}">
-        <i class="fa fa-calendar"></i> {{ page.date|date(system.pages.dateformat.short) }}
+        <i class="fa fa-calendar"></i> <strong>Updated</strong> {{ page.date|nicetime(false) }}
     </time>
+    {% if config.plugins.readingtime.enabled %}
+        <span title="of Reading">| <i class="fa fa-clock-o"></i> {{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) }}</span>
+    {% endif %}
 </span>

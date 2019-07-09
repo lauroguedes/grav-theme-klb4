@@ -17,6 +17,28 @@ form:
       preview_images: true
       description: 'If not specified, this defaults to the first image found in the page''s folder'
 
+    header.hero_overlay:
+      type: toggle
+      label: Overlay
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    header.hero_showsearch:
+      type: toggle
+      label: Search
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
     toggles_title:
       type: spacer
       title: Configuration
@@ -35,6 +57,18 @@ form:
       toggleable: true
       label: Show Sidebar
       highlight: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    header.show_searchsidebar:
+      type: toggle
+      toggleable: true
+      label: Show Search Sidebar
+      highlight: 1
+      default: 0
       options:
         1: PLUGIN_ADMIN.ENABLED
         0: PLUGIN_ADMIN.DISABLED

@@ -1,7 +1,25 @@
-{% if page.taxonomy.tag %}
+{% if page.taxonomy.tag or page.taxonomy.author %}
+<div class="divider text-center" data-content="AUTHOR/TAGS"></div>
+<span class="author">
+    {% if config.plugins.simplesearch.enabled %}
+        {% for author in page.taxonomy.author %}
+            <a class="label label-rounded p-category" href="{{ blog.url|rtrim('/') }}/search/query{{ config.system.param_sep }}{{ author }}#body-wrapper"><i class="fa fa-user"></i> {{ author }}</a>
+        {% endfor %}
+    {% else %}
+        {% for tag in page.taxonomy.author %}
+            <a class="label label-rounded p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ author }}#body-wrapper"><i class="fa fa-user"></i> {{ author }}</a>
+        {% endfor %}
+    {% endif %}
+</span>
 <span class="tags">
-    {% for tag in page.taxonomy.tag %}
-    <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
-    {% endfor %}
+    {% if config.plugins.simplesearch.enabled %}
+        {% for tag in page.taxonomy.tag %}
+            <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/search/query{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
+        {% endfor %}
+    {% else %}
+        {% for tag in page.taxonomy.tag %}
+            <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}#body-wrapper">{{ tag }}</a>
+        {% endfor %}
+    {% endif %}
 </span>
 {% endif %}

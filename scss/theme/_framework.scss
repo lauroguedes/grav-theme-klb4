@@ -147,7 +147,7 @@ section.section {
   }
 
   &.overlay-dark-gradient {
-    background: linear-gradient(to bottom, rgba($primary-color,0.8), rgba($primary-color-2,0.8));
+    background: linear-gradient(to bottom, rgba($primary-color,0.8), rgba($accent-color,0.8));
   }
 }
 

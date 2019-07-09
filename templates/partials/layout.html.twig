@@ -1,9 +1,21 @@
 {% set item_col = show_sidebar ? 'col-9 col-md-12' : 'col-12' %}
 {% set sidebar_col = show_sidebar ? 'col-3 col-md-12' : 'col-12' %}
+{% set show_sectionanchors = page.header.anchors.active %}
+{% set page_type = page.name %}
 
-<div class="columns">
+{% if (not show_sectionanchors and page_type == 'default.md') or (page.children.count == 0 and not show_sectionanchors) %}
+    {% set item_col = 'col-12' %}
+    {% set show_sidebar = false %}
+{% endif %}
+
+<div class="columns frame-box {{ (page_type == 'item.md' or page_type == 'default.md') ? 'content-shadow' : '' }}">
     <div id="item" class="column {{ item_col }} extra-spacing">
         {% block item %}{% endblock %}
+        {% if config.plugins['thumb-ratings'].enabled and (page_type == 'item.md' or page_type == 'default.md') %}
+            <div class="thumb-ratings text-right">
+                <span class="title-thumb">Did this article help you?</span> {{ thumbs(page.slug) }}
+            </div>
+        {% endif %}
     </div>
     {% if show_sidebar %}
     <div id="sidebar" class="column {{ sidebar_col }}">

@@ -1,7 +1,30 @@
 {% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative~'/'~blog.slug) : blog.url %}
 {% set new_base_url = blog.url == '/' ? '' : blog.url %}
+{% set articles = page.find(page.url) %}
+{% set show_search = page.header.show_searchsidebar %}
+{% set show_sectionanchors = page.header.anchors.active %}
+{% set tagtitle = page.header.tagtitle?: 'h2' %}
+{% set terms = page.header.terms?: '' %}
 
-{% if config.plugins.simplesearch.enabled %}
+{% if show_sectionanchors and config.plugins.anchors.enabled %}
+    <div class="divider text-center" data-content="SECTIONS"></div>
+    <div class="sidebar-content">
+        {{ anchors(page.content, tagtitle, terms) }}
+    </div>
+{% endif %}
+
+{% if articles.collection().count > 0 %}
+<div class="sidebar-content">
+    <div class="divider text-center" data-content="TOPICS"></div>
+    <ul class="menu">
+        {% for p in articles.collection()%}
+            <li class="menu-item"><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if show_search and config.plugins.simplesearch.enabled %}
 <div class="sidebar-content">
     {% include 'partials/simplesearch_searchbox.html.twig' %}
 </div>
