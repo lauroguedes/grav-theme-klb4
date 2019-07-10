@@ -71,3 +71,17 @@ figure {
         }
     }
 }
+
+//Backtotop style override
+#return-to-top {
+    line-height: 50px;
+    background: $primary-color;
+    z-index: 9999;
+    border: $border-width solid $primary-color-dark;
+    &:hover {
+        background: $primary-color-dark;
+    }
+    i {
+        position: static;
+    }
+}

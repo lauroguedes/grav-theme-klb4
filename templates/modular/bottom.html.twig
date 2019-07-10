@@ -1,0 +1,31 @@
+{% set grid_size = theme_var('grid-size') %}
+{% set image = page.media.images|first %}
+{% set title = page.header.title_social %}
+{% set socials = page.header.social %}
+
+<section class="section modular-bottom {{ page.header.class}} bg-dark">
+    <section class="container {{ grid_size }}">
+        <div class="footer-stuff text-center">
+            {{ content|raw }}
+        </div>
+        <div class="columns">
+            <div class="column col-6 col-md-12">
+                <div class="logo-img">
+                    {% if image %}
+                        {{ image.html|raw }}
+                    {% else %}
+                        {% include 'partials/logo.html.twig' %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="column col-6 col-md-12 text-right">
+                <h4>{{ title }}</h4>
+                <ul>
+                    {% for social in socials %}
+                        <li><a href="{{ social.url }}" target="_blank"><i class="{{ social.icon }}"></i> <span>{{ social.text }}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>

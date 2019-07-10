@@ -14,4 +14,17 @@ body.sticky-footer {
   color: #acb3c2;
   padding: 1rem $horiz-padding 0;
   text-align: center;
+  font-size: $unit-3;
+  &.bg-dark {
+    background: lighten($dark-color, 3%) !important;
+    a {
+      color: lighten($primary-color-light, 20%);
+      &:hover, &:focus, &.active {
+        color: $light-color;
+      }
+    }
+  }
+  .fa-heart-o {
+    color: lighten($error-color, 10%);
+  }
 }

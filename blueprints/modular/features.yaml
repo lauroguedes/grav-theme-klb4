@@ -12,7 +12,7 @@ form:
             header.class:
               type: select
               label: Layout
-              default: small
+              default: standard
               size: medium
               options:
                 small: Small   = 4 / 3 / 2 columns
@@ -36,3 +36,22 @@ form:
                 .url:
                   type: text
                   label: Link
+                .target:
+                  type: toggle
+                  label: External Link
+                  highlight: 1
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                .permissions:
+                   type: selectize
+                   size: large
+                   label: Permissions
+                   classes: fancy
+                   validate:
+                     type: array
+                   markdown: true
+                   description: 'Available permissions access: `site.moderador`, `site.colaborador`, `site.parceiro`, `site.cliente`'

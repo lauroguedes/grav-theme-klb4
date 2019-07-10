@@ -109,6 +109,7 @@
       margin: 0;
       display: block;
       color: $gray-color-dark;
+      font-size: 1rem;
     }
   }
 
@@ -123,9 +124,103 @@
     padding-bottom: 4rem;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    img {
+      padding: 3px;
+      border: $border-width solid $gray-color-light;
+      background-color: $light-color;
+      border-radius: 4px;
+      &:hover {
+        opacity: .8;
+        transition: all .2s linear;
+      }
+    }
   
     .columns.left {
       flex-direction: row-reverse;
+    }
+  }
+
+  &.modular-bottom {
+    padding-top: $unit-10;
+    padding-bottom: $unit-5;
+
+    h4 {
+      margin-top: 0;
+      color: $light-color;
+    }
+    ul {
+      white-space: nowrap;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      li {
+        position: relative;
+        padding-right: $unit-4;
+        font-size: $unit-4;
+        &:last-child {
+          padding-right: 0;
+        }
+        a {
+          color: #acb3c2;
+          &:hover, &:focus, &.active {
+            color: $light-color;
+          }
+        }
+      }
+    }
+
+    .footer-stuff {
+      h2 {
+        margin: 0;
+        color: #acb3c2;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+      blockquote {
+        display: inline-block;
+        border: none;
+        position: relative;
+        font-style: italic;
+        &:before {
+          content: "\f10d";
+          font-family: FontAwesome;
+          font-size: 3rem;
+          position: absolute;
+          left: -1rem;
+          bottom: -1rem;
+          opacity: .2;
+          transform: scale(1.5) rotate(15deg);
+        }
+      }
+      hr {
+        border-color: lighten($dark-color, 12%);
+        margin-block-start: .8rem;
+        margin-block-end: .8rem;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          border-right: $border-width solid lighten($dark-color, 12%);
+          margin-right: $unit-4;
+          margin-top: 0;
+          &:last-child {
+            margin-right: 0;
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    .logo-img{
+      img, svg {
+        height: 60px;
+      }
+      svg {
+        width: 150px;
+      }
     }
   }
 }

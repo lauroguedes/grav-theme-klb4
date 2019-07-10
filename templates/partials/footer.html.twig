@@ -1,5 +1,16 @@
-<section id="footer" class="section bg-gray">
+{% set home = page.find('/') %}
+{% for module in home.collection() if module.template == 'modular/bottom' %}
+    {{ module.content|raw }}
+{% endfor %}
+<section id="footer" class="section bg-dark">
     <section class="container {{ grid_size }}">
-        <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart-o pulse "></i> by <a href="https://trilby.media">Trilby Media</a>.</p>
+        <p>
+            Theme was <i class="fa fa-code"></i> with <i class="fa fa-heart-o pulse "></i> by <a href="https://leowgweb.com.br">leowgweb</a>
+            <br>
+            Building with <a href="http://getgrav.org">Grav flat-file CMS</a> and based on <a href="https://github.com/getgrav/grav-theme-quark">Quark Theme</a>
+        </p>
     </section>
+    {% if config.plugins.backtotop.enabled %}
+        {% include 'partials/backtotop.html.twig' %}
+    {% endif %}
 </section>

@@ -1,0 +1,28 @@
+title: Bottom
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.title_social:
+              type: text
+              label: Title Social Network
+              default: Follow us
+            header.social:
+              name: social
+              type: list
+              style: vertical
+              label: Social Networks
+              fields:
+                .icon:
+                  type: iconpicker
+                  label: Icon
+                .text:
+                  type: text
+                  label: Text
+                .url:
+                  type: text
+                  label: URL
