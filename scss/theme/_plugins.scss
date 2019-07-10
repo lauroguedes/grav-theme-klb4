@@ -1,4 +1,28 @@
 //SimpleSearch
+section.search-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    .search-image {
+        img {
+            padding: 2px;
+            border: $border-width solid $gray-color-light;
+            background: $light-color;
+            transition: all .2s linear;
+            &:hover {
+                opacity: .8;
+                transition: all .3s linear;
+            }
+        }
+    }
+    .search-item {
+        .search-date {
+            color: $gray-color;
+        }
+        hr {
+            background-color: $gray-color-light; height: $border-width; border: 0;
+        }
+    }
+}
 .search-wrapper {
     .search-input, [data-grav-field="array"] input, [data-grav-field="array"] textarea {
         width: 60%;

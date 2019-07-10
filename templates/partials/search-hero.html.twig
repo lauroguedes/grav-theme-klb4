@@ -1,0 +1,18 @@
+<section id="search-hero" class="section modular-hero hero text-light parallax title-h1h2 parallax" style="background-image: url('{{ url('theme://images/bg-search-page.jpg') }}');">
+    <div class="image-overlay overlay-dark-gradient"></div>
+    <section class="container {{ grid_size }}" style="text-align: center">
+        <h1 class="search-header">{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t }}</h1>
+        <h2>
+            {% if query %}
+                {% set count = search_results ? search_results.count : 0 %}
+                {% if count is same as( 1 ) %}
+                    {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query|e)|raw }}
+                {% else %}
+                    {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query|e, count)|raw }}
+                {% endif %}
+            {% endif %}
+        </h2>
+        {% include 'partials/simplesearch_searchbox.html.twig' %}
+    </section>
+    <i id="to-start" class="pulse fa fa-angle-down"></i>
+</section>

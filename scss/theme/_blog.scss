@@ -86,7 +86,8 @@
 
 /** Blog Listing **/
 .blog-listing {
-
+  padding-left: 2rem;
+  padding-right: 2rem;
   .bricklayer-column {
     padding-left: 0px;
     padding-right: 25px;
@@ -106,10 +107,6 @@
 
   .blog-date {
     font-size: 13px;
-  }
-
-  .label {
-
   }
 }
 
