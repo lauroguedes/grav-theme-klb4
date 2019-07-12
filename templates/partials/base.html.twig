@@ -42,8 +42,11 @@
         <section id="header" class="section">
             <section class="container {{ grid_size }}">
                 <nav class="navbar">
-                    <section class="navbar-section logo">
-                        {% include 'partials/logo.html.twig' %}
+                    <section class="navbar-section logo hide-md">
+                        {% include 'partials/logo.html.twig' with {logo: theme_var('custom_logo')} %}
+                    </section>
+                    <section class="navbar-section logo show-md">
+                        {% include 'partials/logo.html.twig' with {logo: theme_var('custom_logo_mobile')} %}
                     </section>
                     <section class="navbar-section desktop-menu">
 
@@ -88,9 +91,9 @@
 
     <div class="mobile-container">
         <div class="overlay" id="overlay">
-            <div class="mobile-logo">
+            {#<div class="mobile-logo">
                 {% include 'partials/logo.html.twig' with {mobile: true} %}
-            </div>
+            </div>#}
             <nav class="overlay-menu">
                 {% include 'partials/navigation.html.twig' with {tree: true} %}
             </nav>

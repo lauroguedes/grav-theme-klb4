@@ -7,7 +7,7 @@
 {% set terms = page.header.terms?: '' %}
 
 {% if show_sectionanchors and config.plugins.anchors.enabled %}
-    <div class="divider text-center" data-content="SECTIONS"></div>
+    <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.SECTIONS'|t }}"></div>
     <div class="sidebar-content">
         {{ anchors(page.content, tagtitle, terms) }}
     </div>
@@ -15,7 +15,7 @@
 
 {% if articles.collection().count > 0 %}
 <div class="sidebar-content">
-    <div class="divider text-center" data-content="TOPICS"></div>
+    <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
     <ul class="menu">
         {% for p in articles.collection()%}
             <li class="menu-item"><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
@@ -31,14 +31,14 @@
 {% endif %}
 {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
 <div class="sidebar-content">
-    <h4>{{ 'THEME_QUARK.SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h4>
+    <h4>{{ 'THEME_KLB4.SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h4>
     {% include 'partials/relatedpages.html.twig' %}
 </div>
 {% endif %}
 {% if config.plugins.random.enabled %}
 <div class="sidebar-content">
-	<h4>{{ 'THEME_QUARK.SIDEBAR.RANDOM_ARTICLE.HEADLINE'|t }}</h4>
-	<a class="button" href="{{ base_url }}/random"><i class="fa fa-retweet"></i> {{ 'THEME_QUARK.SIDEBAR.RANDOM_ARTICLE.FEELING_LUCKY'|t }}</a>
+	<h4>{{ 'THEME_KLB4.SIDEBAR.RANDOM_ARTICLE.HEADLINE'|t }}</h4>
+	<a class="button" href="{{ base_url }}/random"><i class="fa fa-retweet"></i> {{ 'THEME_KLB4.SIDEBAR.RANDOM_ARTICLE.FEELING_LUCKY'|t }}</a>
 </div>
 {% endif %}
 
@@ -46,19 +46,19 @@
 
 {% if config.plugins.taxonomylist.enabled %}
 <div class="sidebar-content">
-    <h4>{{ 'THEME_QUARK.SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h4>
+    <h4>{{ 'THEME_KLB4.SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h4>
     {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
 </div>
 {% endif %}
 {% if config.plugins.archives.enabled %}
 <div class="sidebar-content">
-    <h4>{{ 'THEME_QUARK.SIDEBAR.ARCHIVES.HEADLINE'|t }}</h4>
+    <h4>{{ 'THEME_KLB4.SIDEBAR.ARCHIVES.HEADLINE'|t }}</h4>
 	{% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
 </div>
 {% endif %}
 {% if config.plugins.feed.enabled %}
 <div class="sidebar-content syndicate">
-    <h4>{{ 'THEME_QUARK.SIDEBAR.SYNDICATE.HEADLINE'|t }}</h4>
+    <h4>{{ 'THEME_KLB4.SIDEBAR.SYNDICATE.HEADLINE'|t }}</h4>
     <a class="btn" href="{{ feed_url }}.atom"><i class="fa fa-rss-square"></i> Atom 1.0</a>
     <a class="btn" href="{{ feed_url }}.rss"><i class="fa fa-rss-square"></i> RSS</a>
     {% if config.plugins.feed.enable_json_feed %}<a class="btn" href="{{ feed_url }}.json"><i class="fa fa-rss-square"></i> JSON</a>{% endif %}

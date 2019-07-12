@@ -1,7 +1,7 @@
 name: Klb4
 version: 1.0.0
 description: Grav Theme for Knowledgebase
-icon:  atlas
+icon:  book
 author:
   name: Lauro W. Guedes
   email: leowgweb@gmail.com
@@ -134,9 +134,8 @@ form:
       label: External Links
       fields:
         .icon:
-          type: text
-          label: String Icon
-          description: Insert a string icon (https://fontawesome.com)
+          type: iconpicker
+          label: Icon
         .text:
           type: text
           label: Item Text

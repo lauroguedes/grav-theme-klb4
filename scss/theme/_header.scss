@@ -66,6 +66,11 @@
       display: inherit;
       @extend .default-animation;
     }
+    &.show-md {
+      svg, img {
+        margin-top: .7rem;
+      }
+    }
   }
 
   // Fixed Header solution
@@ -89,6 +94,11 @@ body.header-fixed.header-animated {
       svg, img {
         width: 100px;
         height: 28px;
+      }
+      &.show-md {
+        svg, img {
+          margin-top: .3rem;
+        }
       }
     }
 

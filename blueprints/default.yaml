@@ -26,7 +26,7 @@ form:
                        type: toggle
                        label: Active Anchors
                        highlight: 1
-                       default: 1
+                       default: 0
                        help: Active anchors e enable menu sidebar sections
                        options:
                          1: PLUGIN_ADMIN.ENABLED

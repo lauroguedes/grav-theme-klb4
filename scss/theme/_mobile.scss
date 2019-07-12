@@ -8,19 +8,6 @@
   z-index: 2;
 }
 
-.mobile-logo {
-  svg, img {
-    height: 42px;
-    margin-top: .7rem;
-    margin-left: 1.4rem;
-
-    path {
-      fill: $light-color;
-    }
-
-  }
-}
-
 // Hamburger Menu
 .mobile-menu {
 
@@ -95,7 +82,7 @@
 
 .overlay {
   position: fixed;
-  background: #000;
+  background: $mobile-overlay;
   top: 0;
   left: 0;
   width: 100%;
@@ -131,24 +118,25 @@
 .treemenu {
 
   &.treemenu-root {
-    margin: 1rem;
+    margin: 4rem 1rem 1rem 1rem;
   }
 
   li {
     list-style: none;
-    margin: 0 0 1px;
-    padding: 5px 0;
+    margin: 0;
+    padding: 15px 5px;
     line-height: 1.2rem;
 
-    background: rgba($gray-color-dark,0.1);
+    //background: rgba($gray-color-dark,0.1);
 
     a {
       display: block;
-      margin-left: 1.2rem;
-      font-size: 1rem;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      color: $mobile-color-main;
 
       &:hover, &:focus, &.active {
-        color: $primary-color-light !important;
+        color: $light-color !important;
         text-decoration: none;
       }
     }

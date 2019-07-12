@@ -1,5 +1,5 @@
 {% if page.taxonomy.tag or page.taxonomy.author %}
-<div class="divider text-center" data-content="AUTHOR/TAGS"></div>
+<div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TAXONOMY'|t }}"></div>
 <span class="author">
     {% if config.plugins.simplesearch.enabled %}
         {% for author in page.taxonomy.author %}

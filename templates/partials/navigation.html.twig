@@ -6,7 +6,7 @@
         {% for item in external_links %}
             <li class="external-links-menu">
                 <a href="{{ item.url }}" {% if item.target %}target="_blank"{% endif %}>
-                    <i class="fa {{ item.icon }}"></i>
+                    <i class="{{ item.icon }}"></i>
                     <span>{{ item.text }}</span>
                 </a>
             </li>

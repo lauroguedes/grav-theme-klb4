@@ -19,7 +19,7 @@
 
         {% if collection.count > 0 %}
             <div id="list-children-item" class="e-children">
-                <div class="divider text-center" data-content="TOPICS"></div>
+                <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
                 {% for child in collection %}
                     {% include 'partials/blog/title.html.twig' with {title_level: 'h3', page: child, icon: 'file-text-o', class_over: 'title-children'} %}
                     <div class="divider"></div>
@@ -40,10 +40,10 @@
 
 <p class="prev-next text-center">
     {% if not page.isLast %}
-            <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_QUARK.BLOG.ITEM.PREV_POST'|t }}</a>
+        <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'THEME_KLB4.BLOG.ITEM.PREV_POST'|t }}</a>
     {% endif %}
 
     {% if not page.isFirst %}
-        <a class="btn" href="{{ page.nextSibling.url }}">{{ 'THEME_QUARK.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
+        <a class="btn" href="{{ page.nextSibling.url }}">{{ 'THEME_KLB4.BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
     {% endif %}
 </p>
