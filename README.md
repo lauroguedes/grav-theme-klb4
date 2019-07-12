@@ -24,12 +24,13 @@
   * Features Modular view template `features.md`
   * Hero Modular view template `hero.md`
   * Text Modular view template `text.md`
+  * Bottom Section Modular view template `bottom.md`
 
 # Installation
 
 Installing the Klb4 theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file. 
 
-The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The Klb4 theme can be found in both the [One-page](https://github.com/getgrav/grav-skeleton-onepage-site) and [Blog Site](https://github.com/getgrav/grav-skeleton-blog-site) which are self-contained repositories for a complete sites which include: sample content, configuration, theme, and plugins.
+The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The Klb4 theme can be found in both the [Website](https://github.com/lauroguedes/grav-skeleton-klb4) which are self-contained repositories for a complete sites which include: sample content, configuration, theme, and plugins.
 
 ## GPM Installation (Preferred)
 
@@ -52,17 +53,19 @@ You should now have all the theme files under
 Klb4 comes with a few default options that can be set site-wide.  These options are:
 
 ```yaml
-enabled: true                 # Enable the theme
-production-mode: true         # In production mode, only minified CSS is used. When disabled, nested CSS with sourcemaps are enabled
-grid-size: grid-lg            # The max-width of the theme, options include: `grid-xl`, `grid-lg`, and `grid-md`
-header-fixed: true            # Cause the header to be fixed at the top of the browser
-header-animated: true         # Allows the fixed header to resize to a smaller header when scrolled
-header-dark: false            # Inverts the text/logo to work better on dark backgrounds
-header-transparent: false     # Allows the fixed header to be transparent over the page
-sticky-footer: true           # Causes the footer to be sticky at the bottom of the page
-blog-page: '/blog'            # The route to the blog listing page, useful for a blog style layout with sidebar
-custom_logo:                  # A custom logo rather than the default (see below)  
-custom_logo_mobile:           # A custom logo to use for mobile navigation
+enabled: true                   # Enable the theme
+production-mode: true           # In production mode, only minified CSS is used. When disabled, nested CSS with sourcemaps are enabled
+grid-size: grid-lg              # The max-width of the theme, options include: `grid-xl`, `grid-lg`, and `grid-md`
+header-fixed: true              # Cause the header to be fixed at the top of the browser
+header-animated: true           # Allows the fixed header to resize to a smaller header when scrolled
+header-dark: false              # Inverts the text/logo to work better on dark backgrounds
+header-transparent: false       # Allows the fixed header to be transparent over the page
+header-showexternallinks: true  # Allows an outher menu type in header
+header-externallinks:           # A array list of links for menu
+sticky-footer: true             # Causes the footer to be sticky at the bottom of the page
+blog-page: '/blog'              # The route to the blog listing page, useful for a blog style layout with sidebar
+custom_logo:                    # A custom logo rather than the default (see below)  
+custom_logo_mobile:             # A custom logo to use for mobile navigation
 ```
 
 To make modifications, you can copy the `user/themes/klb4/klb4.yaml` file to `user/config/themes/` folder and modify, or you can use the admin plugin.
@@ -98,6 +101,8 @@ The hero template allows some options to be set in the page frontmatter. This is
 
 ```yaml
 hero_classes: text-light title-h1h2 parallax overlay-dark-gradient hero-large
+hero_overlay: true # Enable overlay effect
+hero_search: true # Enable plugin simplesearch on hero page
 hero_image: road.jpg
 hero_align: center
 ```
@@ -120,26 +125,40 @@ The `hero_image` should point to an image file in the current page folder.
 The features modular template provides the ability to set a class on the features, as well as an array of feature items.  For example:
 
 ```yaml
-class: offset-box
+class: standard
 features:
-    - header: Crazy Fast
-      text: "Performance is not just an afterthought, we baked it in from the start!"
-      icon: fighter-jet
-    - header: Easy to build
-      text: "Simple text files means Grav is trivial to install, and easy to maintain"
-      icon: database
-    - header: Awesome Technology
-      text: "Grav employs best-in-class technologies such as Twig, Markdown &amp; Yaml"
-      icon: cubes
-    - header: Super Flexible
-      text: "From the ground up, with many plugin hooks, Grav is extremely extensible"
-      icon: object-ungroup
-    - header: Abundant Plugins
-      text: "A vibrant developer community means over 200 themes available to download"
-      icon: puzzle-piece
-    - header: Free / Open Source
-      text: "Grav is an open source project, so you can spend your money on other stuff"
-      icon: money 
+    -
+        icon: 'fa fa-desktop'
+        header: Systems
+        text: 'Find project and system information'
+        url: 'https://github.com/lauroguedes/grav-theme-klb4'
+        target: true
+    -
+        icon: 'fa fa-question-circle'
+        header: FAQs
+        text: 'Find information about frequently asked questions'
+        target: false
+    -
+        icon: 'fa fa-clipboard'
+        header: Manuals
+        text: 'Learn all about our products and services through the manuals'
+        url: /manuals
+        target: false
+    -
+        icon: 'fa fa-bullhorn'
+        header: Marketing
+        text: 'Access marketing kits and use to advertise your business'
+        target: false
+    -
+        icon: 'fa fa-gavel'
+        header: Policies
+        text: 'Learn all about our internal and external policies'
+        target: false
+    -
+        icon: 'fa fa-book'
+        header: 'Knowledgebase Tutorials'
+        text: 'Learn how to use and create content in Klb4'
+        target: false
 ```
 
 ## Text Modular Options
@@ -147,6 +166,33 @@ features:
 The text box provides a single option to control if any image found in the page folder should be left or right aligned:
 
 ```yaml
-image_align: right
+image_align: left
 ```
 
+## Bottom Modular Options
+
+The bottom box provides a single option to create um bootom footer content with logo and follow-us socials
+```yaml
+title_social: 'Follow us'
+social:
+    -
+        icon: 'fa fa-facebook-official'
+        text: Facebook
+        url: 'https://facebook.com'
+    -
+        icon: 'fa fa-twitter'
+        text: Twitter
+        url: 'https://twitter.com'
+    -
+        icon: 'fa fa-instagram'
+        text: Instagram
+        url: 'https://instagram.com'
+```
+
+## Permission Groups
+
+Klb4 Theme comes with predefined permission groups and permissions that can be used to free or not access certain types of content. To use this feature, integrate [skeleton](https://github.com/lauroguedes/grav-skeleton-klb4) file `groups.yaml` into the theme and install the [login plugin](https://github.com/getgrav/grav-plugin-login).
+
+## Permission Settings
+
+The Klb4 theme comes with a permission setting field on all types of pages so you can block or release a particular page for different users.

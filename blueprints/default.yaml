@@ -20,7 +20,9 @@ form:
                        label: Permission
                        placeholder_key: key
                        placeholder_value: value(0 or 1)
-                       help: 'Enter in the key field the permission and in field value 0 to disable and1 to enable. Permissions: moderador, colaborador, parceiro, cliente'
+                       help: 'Insert a key and in value put 1 for true and 0 for false'
+                       markdown: true
+                       description: 'Available keys: `site.moderador`, `site.colaborador`, `site.parceiro`, `site.cliente`'
 
                      header.anchors.active:
                        type: toggle
