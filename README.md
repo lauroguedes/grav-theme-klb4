@@ -2,7 +2,7 @@
 
 ![Klb4 Theme](assets/klb4-screenshots.jpg)
 
-**Klb4** is the new default theme for [Grav CMS](http://github.com/getgrav/grav).  This theme is built with the [Spectre.css](https://picturepan2.github.io/spectre/) framework and provides a powerful base for developing your own themes. Klb4 uses functionality that is only available in Grav 1.4+, as such you cannot run Klb4 on earlier versions of Grav.
+**Klb4** is a theme for [Grav CMS](http://github.com/getgrav/grav) of knowledgebase for companies.  This theme is built with the [Spectre.css](https://picturepan2.github.io/spectre/) framework and provides a powerful base for developing your own themes. Klb4 uses functionality that is only available in Grav 1.4+, as such you cannot run Klb4 on earlier versions of Grav.
 
 ## Features
 
