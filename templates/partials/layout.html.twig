@@ -8,10 +8,10 @@
     {% set show_sidebar = false %}
 {% endif %}
 
-<div class="columns frame-box {{ (page_type == 'item.md' or page_type == 'default.md') ? 'content-shadow' : '' }}">
+<div class="columns frame-box {{ ((page_type == 'item.md' or page_type == 'item.'~html_lang~'.md') or (page_type == 'default.md' or page_type == 'default.'~html_lang~'.md')) ? 'content-shadow' : '' }}">
     <div id="item" class="column {{ item_col }} extra-spacing">
         {% block item %}{% endblock %}
-        {% if config.plugins['thumb-ratings'].enabled and (page_type == 'item.md' or page_type == 'default.md') %}
+        {% if config.plugins['thumb-ratings'].enabled and ((page_type == 'item.md' or page_type == 'item.'~html_lang~'.md') or (page_type == 'default.md' or page_type == 'default.'~html_lang~'.md')) %}
             <div class="thumb-ratings text-right">
                 <span class="title-thumb">Did this article help you?</span> {{ thumbs(page.slug) }}
             </div>

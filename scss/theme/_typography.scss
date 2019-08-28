@@ -178,3 +178,37 @@ ol {
   }
 }
 
+//table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1rem 0;
+  @if $rtl == true {
+    text-align: right;
+  } @else {
+    text-align: left;
+  }
+  tbody {
+    tr:nth-of-type(odd) {
+      background: $bg-color;
+    }
+    tr {
+      &.active {
+        background: $bg-color-dark;
+      }
+      &:hover {
+        background: $bg-color-dark;
+      }
+    }
+  }
+  td,
+  th {
+    border-bottom: $border-width solid $border-color;
+    padding: $unit-3 $unit-2;
+  }
+  th {
+    border-bottom-width: $border-width-lg;
+  }
+}
+
