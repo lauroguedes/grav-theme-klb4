@@ -109,3 +109,43 @@ figure {
         position: static;
     }
 }
+
+//Snappygrav style override
+.btn-snappygrav {
+    .export {
+        padding: .2rem;
+        margin: 0;
+        font-size: .5rem;
+        i.fa {
+            color: $error-color;
+        }
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons button{
+    padding: 0;
+    &.btn-green {
+        background: $primary-color;
+        &:hover {
+            background: $primary-color-light;
+        }
+    }
+    &.btn-purple {
+        background: $success-color;
+        &:hover {
+            background: lighten($success-color, 10%);
+        }
+    }
+    &.btn-gray {
+        &:hover {
+            background: lighten(#303f53, 10%);
+        }
+    }
+}
+.jconfirm-title-c {
+    i.fa {
+        color: lighten($error-color, 15%);
+    }
+}

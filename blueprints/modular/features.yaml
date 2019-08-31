@@ -47,11 +47,9 @@ form:
                   validate:
                     type: bool
                 .permissions:
-                   type: selectize
+                   type: text
                    size: large
                    label: Permissions
                    classes: fancy
-                   validate:
-                     type: array
                    markdown: true
                    description: 'Available permissions access: `site.moderador`, `site.colaborador`, `site.parceiro`, `site.cliente`'

@@ -239,10 +239,11 @@ body::-webkit-scrollbar-thumb {
         justify-content: center;
       }
       img, svg {
-        height: 60px;
+        height: 70px;
+        opacity: .4;
       }
       svg {
-        width: 150px;
+        width: 250px;
       }
     }
   }
