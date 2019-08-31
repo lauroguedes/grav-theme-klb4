@@ -61,14 +61,21 @@
 
   .logo {
     svg, img {
-      width: 150px;
-      height: 42px;
+      width: 250px;
+      height: 70px;
+      @include breakpoint(md) {
+        width: 200px;
+        height: 56px;
+      }
       display: inherit;
       @extend .default-animation;
     }
     &.show-md {
       svg, img {
         margin-top: .7rem;
+        @include breakpoint(md) {
+          margin-top: 0;
+        }
       }
     }
   }
@@ -92,12 +99,19 @@ body.header-fixed.header-animated {
 
     .logo {
       svg, img {
-        width: 100px;
-        height: 28px;
+        width: 150px;
+        height: 42px;
+        @include breakpoint(md) {
+          width: 135px;
+          height: 38px;
+        }
       }
       &.show-md {
         svg, img {
           margin-top: .3rem;
+          @include breakpoint(md) {
+            margin-top: 0;
+          }
         }
       }
     }

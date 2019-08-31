@@ -6,22 +6,22 @@
 {% set tagtitle = page.header.tagtitle?: 'h2' %}
 {% set terms = page.header.terms?: '' %}
 
+{% if articles.collection().count > 0 %}
+    <div class="sidebar-content">
+        <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
+        <ul class="menu">
+            {% for p in articles.collection()%}
+                <li class="menu-item"><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
 {% if show_sectionanchors and config.plugins.anchors.enabled %}
     <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.SECTIONS'|t }}"></div>
     <div class="sidebar-content">
         {{ anchors(page.content, tagtitle, terms) }}
     </div>
-{% endif %}
-
-{% if articles.collection().count > 0 %}
-<div class="sidebar-content">
-    <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
-    <ul class="menu">
-        {% for p in articles.collection()%}
-            <li class="menu-item"><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
-        {% endfor %}
-    </ul>
-</div>
 {% endif %}
 
 {% if show_search and config.plugins.simplesearch.enabled %}

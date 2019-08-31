@@ -75,8 +75,15 @@ a:focus {
   box-shadow: none !important;
 }
 
+//Images
+figure {
+  text-align: center;
+}
 img {
   max-width: 100%;
+  &[src$=".png"] {
+    border: none !important;
+  }
 }
 
 
@@ -87,15 +94,20 @@ pre code, pre.xdebug-var-dump{
   padding: 1rem !important;
   line-height: 1.5;
   color: inherit;
-  border-radius: 2px;
   overflow-x: auto;
 }
+.code-toolbar{
+  pre[class*="language-"]{
+    border-radius: .5rem;
+    padding: 0;
+  }
+}
 
-pre {
+/*pre {
   code:not(.hljs) {
     background: #f8f8f8;
   }
-}
+}*/
 
 // Icon Tweaks
 i.fa {
@@ -173,6 +185,7 @@ ol {
 // Notices
 .notices {
   margin: 1.5rem 0;
+  padding-right: .8rem;
   p {
     margin: 1rem 0;
   }

@@ -1,8 +1,12 @@
 <span class="blog-date">
     <time class="dt-published" datetime="{{ page.date|date("c") }}">
-        <i class="fa fa-calendar"></i> <strong>{{ 'THEME_KLB4.BLOG.ITEM.PUBLISHED_DATE'|t  }}</strong> {{ page.date|nicetime(false) }}
+        <i class="fa fa-calendar"></i> <strong>{{ 'THEME_KLB4.BLOG.ITEM.PUBLISHED_DATE'|t  }}</strong> <span title="{{ page.date|date('d/m/Y H:i:s') }}">{{ page.date|nicetime(false) }}</span>
     </time>
     {% if config.plugins.readingtime.enabled %}
-        <span title="of Reading">| <i class="fa fa-clock-o"></i> {{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) }}</span>
+        {% set readingtime = page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) %}
+        <span title="{{ 'PLUGIN_READINGTIME.TAG_TITLE'|t }}">{{ readingtime != '0 minutos' ? '| <i class="fa fa-clock-o"></i> '~readingtime : '' }}</span>
+    {% endif %}
+    {% if config.plugins.snappygrav.enabled and authorize(['site.parceiro', 'site.colaborador', 'site.moderador', 'admin.super']) %}
+        | <span class="btn-snappygrav">{{ snappygrav( page.route ) }}</span>
     {% endif %}
 </span>

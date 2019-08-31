@@ -12,9 +12,9 @@
             <div class="column col-6 col-md-12">
                 <div class="logo-img">
                     {% if image %}
-                        {{ image.html|raw }}
+                        {% include 'partials/logo.html.twig' with {logo: image.url} %}
                     {% else %}
-                        {% include 'partials/logo.html.twig' %}
+                        {% include 'partials/logo.html.twig' with {logo: theme_var('custom_logo')} %}
                     {% endif %}
                 </div>
             </div>
