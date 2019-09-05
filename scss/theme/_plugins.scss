@@ -42,17 +42,17 @@ section.search-page {
     .icon-search {
         position: relative;
         &:before {
+            font-family: 'FontAwesome';
             display: inline-block;
             font-style: normal;
             font-variant: normal;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free";
             font-weight: 900;
             content: "\f002";
             position: absolute;
             left: 18px;
-            font-size: 24px;
+            font-size: 1.5rem;
             line-height: 80px;
             color: $secondary-color;
             z-index: 3;
@@ -147,5 +147,43 @@ figure {
 .jconfirm-title-c {
     i.fa {
         color: lighten($error-color, 15%);
+    }
+}
+
+//External Links
+h1,
+.title-children {
+    .anchorjs-link {
+        display: none;
+    }
+}
+.title-h1h2 {
+    h1,
+    h2,
+    h3 {
+        .anchorjs-link {
+            display: none;
+        }
+    }
+}
+.btn-primary {
+    &.external-link{
+        background: $primary-color !important;
+        &:focus,
+        &:hover {
+            background: darken($primary-color-dark, 2%) !important;
+            border-color: darken($primary-color-dark, 5%);
+            color: $light-color;
+        }
+    }
+}
+.btn-success {
+    &.external-link{
+        background: $success-color !important;
+    }
+}
+.btn-error {
+    &.external-link{
+        background: $error-color !important;
     }
 }

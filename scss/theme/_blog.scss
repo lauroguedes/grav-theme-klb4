@@ -32,6 +32,7 @@
   .title-children {
     margin: 0 !important;
     padding: 0.8rem 0;
+    text-transform: uppercase;
     a:hover{
       text-decoration: none;
       color: $accent-color;
@@ -62,24 +63,18 @@
   align-items: center;
   margin-top: -1rem;
   font-size: .6rem;
-
+  text-transform: uppercase;
 
   i {
     display: none;
   }
 
   span, a {
-    padding: 0 0.5rem;
-    &:first-child {
-      padding-left: 0;
-    }
-  }
-
-  span, a {
+    padding: 0;
     &:not(:first-child)::before {
       color: #e7e9ed;
       content: "/";
-      padding-right: 1rem;
+      padding: 0 1rem;
     }
   }
 }
@@ -105,6 +100,9 @@
         transition: all .2s linear;
       }
     }
+    .card-title {
+      text-transform: uppercase;
+    }
   }
 
   .card-footer {
@@ -119,7 +117,6 @@
 /** Blog Item **/
 .content-title {
   margin-bottom: 2rem;
-
   h2 {
     margin-bottom: 0.5rem;
   }
@@ -141,7 +138,7 @@ ul.pagination {
 
 /** Sidebar specific tweaks **/
 #sidebar {
-
+  text-transform: uppercase;
   //sidebar style
   .menu {
     padding-top: 0;
