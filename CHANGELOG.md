@@ -1,3 +1,13 @@
+# v1.1.0
+## 09/28/2019
+
+1. [](#new)
+    * New field for Google Analytics ID
+    * Compatibility with [SnappGrav Plugin](https://github.com/iusvar/grav-plugin-snappygrav)
+    * Css style adaptation for printing
+1. [](#bugfix)
+    * Footer responsive menu fix
+
 # v1.0.3
 ## 09/04/2019
 

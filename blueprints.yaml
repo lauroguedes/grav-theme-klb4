@@ -1,5 +1,5 @@
 name: Klb4
-version: 1.0.3
+version: 1.1.0
 description: Grav Theme for Knowledgebase
 icon:  book
 author:
@@ -41,6 +41,16 @@ form:
         grid-xl: Extra Large
         grid-lg: Large
         grid-md: Medium
+
+    analytics_id:
+      type: text
+      label: Google Analytics ID
+      help: JavaScript library for measuring how users interact with your website
+      size: medium
+      placeholder: UA-XXXXX-Y
+      validate:
+        pattern: "^UA-\d{4,9}-\d{1,4}$"
+        message: 'Invalid pattern Google Analytics ID. Ex: UA-138980212-1'
 
     header_section:
       type: section

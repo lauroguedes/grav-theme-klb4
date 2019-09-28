@@ -171,6 +171,7 @@ body::-webkit-scrollbar-thumb {
       list-style: none;
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       @include breakpoint(xs) {
         justify-content: center;
       }
@@ -178,6 +179,7 @@ body::-webkit-scrollbar-thumb {
         position: relative;
         padding-right: $unit-4;
         font-size: $unit-4;
+        line-height: 1.3rem;
         &:last-child {
           padding-right: 0;
         }

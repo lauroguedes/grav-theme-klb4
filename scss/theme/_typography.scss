@@ -189,6 +189,47 @@ ol {
   p {
     margin: 1rem 0;
   }
+  // Print version
+  @media print {
+    position: relative;
+    &.yellow {
+      &:before {
+        content: '!';
+        font-size: .8rem;
+        font-weight: bold;
+        position: absolute;
+        left: .6rem;
+      }
+    }
+    &.red {
+      &:before {
+        content: 'X';
+        font-size: .8rem;
+        font-weight: bold;
+        position: absolute;
+        left: .6rem;
+      }
+    }
+    &.blue {
+      &:before {
+        content: '?';
+        font-size: .8rem;
+        font-weight: bold;
+        position: absolute;
+        left: .6rem;
+      }
+    }
+    &.green {
+      &:before {
+        content: '1';
+        font-size: .8rem;
+        font-weight: bold;
+        position: absolute;
+        left: .6rem;
+        transform: rotate(140deg);
+      }
+    }
+  }
 }
 
 //table
@@ -225,3 +266,39 @@ table {
   }
 }
 
+//print
+@media print {
+  * {
+      background:transparent !important;
+      color:#000 !important;
+      text-shadow:none !important;
+      filter:none !important;
+      -ms-filter:none !important;
+      box-shadow: none !important;
+    }
+    body {
+      margin:0;
+      padding:0;
+      line-height: 1.4em;
+    }
+    @page {
+      margin: 0.8cm;
+    }
+    nav,
+    footer,
+    video,
+    audio,
+    object,
+    embed,
+    #header,
+    .modular-bottom,
+    #return-to-top { 
+      display: none !important; 
+    }
+    body #body-wrapper {
+      padding-top: 0 !important;
+    }
+    .section {
+      padding: 0 !important;
+    }
+}

@@ -13,6 +13,8 @@
 * Built-in support for on-page navigation
 * Multiple page template types
 * Fontawesome icon support
+* Compatibility with [SnappGrav Plugin](https://github.com/iusvar/grav-plugin-snappygrav)
+* Css style adaptation for printing
 
 ### Supported Page Templates
 

@@ -1,5 +1,6 @@
 {% set body_classes = body_class(['header-fixed', 'header-animated', 'header-dark', 'header-transparent', 'sticky-footer']) %}
 {% set grid_size = theme_var('grid-size') %}
+{% set analytics_id = theme_var('analytics_id') %}
 {% set compress = theme_var('production-mode') ? '.min.css' : '.css' %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
@@ -15,6 +16,18 @@
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
+
+{% if (analytics_id) %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics_id }}"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ analytics_id }}');
+    </script>
+{% endif %}
 
 {% block stylesheets %}
     {% do assets.addCss('theme://css-compiled/spectre'~compress) %}
