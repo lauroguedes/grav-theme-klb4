@@ -3,7 +3,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -15,6 +15,10 @@ body::-webkit-scrollbar-thumb {
   #to-start {
     z-index: 2;
     bottom: 3.5rem;
+  }
+
+  .container {
+    z-index: 3;
   }
 }
 
@@ -63,6 +67,7 @@ body::-webkit-scrollbar-thumb {
         @extend .default-animation;
 
       }
+
       h6 {
         text-transform: none;
       }
@@ -72,7 +77,7 @@ body::-webkit-scrollbar-thumb {
   .frame-box {
     padding: 3rem 0;
 
-    > p {
+    >p {
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
@@ -85,10 +90,12 @@ body::-webkit-scrollbar-thumb {
     &:hover {
       .feature-icon {
         color: $gray-color;
+
         h6 {
           color: $primary-color;
         }
       }
+
       .feature-content {
         color: $gray-color-dark;
       }
@@ -143,12 +150,13 @@ body::-webkit-scrollbar-thumb {
       border: $border-width solid $gray-color-light;
       background-color: $light-color;
       border-radius: 4px;
+
       &:hover {
         opacity: .8;
         transition: all .2s linear;
       }
     }
-  
+
     .columns.left {
       flex-direction: row-reverse;
     }
@@ -161,10 +169,12 @@ body::-webkit-scrollbar-thumb {
     h4 {
       margin-top: 0;
       color: $light-color;
+
       @include breakpoint(xs) {
         text-align: center;
       }
     }
+
     ul {
       white-space: nowrap;
       margin: 0;
@@ -172,20 +182,27 @@ body::-webkit-scrollbar-thumb {
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
+
       @include breakpoint(xs) {
         justify-content: center;
       }
+
       li {
         position: relative;
         padding-right: $unit-4;
         font-size: $unit-4;
         line-height: 1.3rem;
+
         &:last-child {
           padding-right: 0;
         }
+
         a {
           color: #acb3c2;
-          &:hover, &:focus, &.active {
+
+          &:hover,
+          &:focus,
+          &.active {
             color: $light-color;
           }
         }
@@ -199,11 +216,13 @@ body::-webkit-scrollbar-thumb {
         font-weight: 100;
         text-transform: uppercase;
       }
+
       blockquote {
         display: inline-block;
         border: none;
         position: relative;
         font-style: italic;
+
         &:before {
           content: "\f10d";
           font-family: FontAwesome;
@@ -215,18 +234,22 @@ body::-webkit-scrollbar-thumb {
           transform: scale(1.5) rotate(15deg);
         }
       }
+
       hr {
         border-color: lighten($dark-color, 12%);
         margin-block-start: .8rem;
         margin-block-end: .8rem;
       }
+
       ul {
         display: flex;
         justify-content: center;
+
         li {
           border-right: $border-width solid lighten($dark-color, 12%);
           margin-right: $unit-4;
           margin-top: 0;
+
           &:last-child {
             margin-right: 0;
             border-right: none;
@@ -235,15 +258,18 @@ body::-webkit-scrollbar-thumb {
       }
     }
 
-    .logo-img{
+    .logo-img {
       @include breakpoint(xs) {
         display: flex;
         justify-content: center;
       }
-      img, svg {
+
+      img,
+      svg {
         height: 70px;
         opacity: .4;
       }
+
       svg {
         width: 250px;
       }

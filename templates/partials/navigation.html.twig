@@ -2,32 +2,35 @@
 {% set show_external_links = theme_var('header-showexternallinks') %}
 {% set external_links = theme_var('header-externallinks') %}
 <ul {{ tree ? 'class="tree"' : '' }}>
-    {% if show_external_links %}
-        {% for item in external_links %}
-            <li class="external-links-menu">
-                <a href="{{ item.url }}" {% if item.target %}target="_blank"{% endif %}>
-                    <i class="{{ item.icon }}"></i>
-                    <span>{{ item.text }}</span>
-                </a>
-            </li>
-        {% endfor %}
-        {% if config.plugins.login.enabled and grav.user.username %}
-            {% include 'partials/login-status.html.twig' %}
-        {% else %}
-            <li class="external-links-menu">
-                <a href="/login">
-                    <i class="fa fa-lock"></i>
-                    <span>Login</span>
-                </a>
-            </li>
-        {% endif %}
-    {% else %}
-      {{ macros.nav_loop(pages) }}
-      {% if config.plugins.login.enabled and grav.user.username %}
-        <li>{% include 'partials/login-status.html.twig' %}</li>
-      {% else %}
-        <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
-      {% endif %}
-    {% endif %}
+	{% if show_external_links %}
+		{% for item in external_links %}
+			<li class="external-links-menu">
+				<a href="{{ item.url }}" {% if item.target %} target="_blank" {% endif %}>
+					<i class="{{ item.icon }}"></i>
+					<span>{{ item.text }}</span>
+				</a>
+			</li>
+		{% endfor %}
+		{% if config.plugins.login.enabled and grav.user.username %}
+			{% include 'partials/login-status.html.twig' %}
+		{% else %}
+			<li class="external-links-menu">
+				<a href="/login">
+					<i class="fa fa-lock"></i>
+					<span>Login</span>
+				</a>
+			</li>
+		{% endif %}
+	{% else %}
+		{{ macros.nav_loop(pages) }}
+		{% if config.plugins.login.enabled and grav.user.username %}
+			<li>{% include 'partials/login-status.html.twig' %}</li>
+		{% else %}
+			<li>
+				<a href="/login">
+					<i class="fa fa-lock"></i>
+					Login</a>
+			</li>
+		{% endif %}
+	{% endif %}
 </ul>
-

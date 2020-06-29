@@ -21,15 +21,19 @@
   .header-dark &:not(.scrolled) {
     background: $header-color-dark;
     color: $light-color;
+
     a {
       color: rgba($light-color, 0.7) !important;
     }
+
     a.active {
       color: $light-color !important;
     }
+
     .dropmenu ul ul a {
-        color: $dark-color !important;
+      color: $dark-color !important;
     }
+
     .logo svg path {
       fill: $light-color;
     }
@@ -60,19 +64,27 @@
   }
 
   .logo {
-    svg, img {
+
+    svg,
+    img {
       width: 250px;
       height: 70px;
+
       @include breakpoint(md) {
         width: 200px;
         height: 56px;
       }
+
       display: inherit;
       @extend .default-animation;
     }
+
     &.show-md {
-      svg, img {
+
+      svg,
+      img {
         margin-top: .7rem;
+
         @include breakpoint(md) {
           margin-top: 0;
         }
@@ -84,7 +96,7 @@
   .header-fixed & {
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 10;
   }
 }
 
@@ -98,17 +110,24 @@ body.header-fixed.header-animated {
     }
 
     .logo {
-      svg, img {
+
+      svg,
+      img {
         width: 150px;
         height: 42px;
+
         @include breakpoint(md) {
           width: 135px;
           height: 38px;
         }
       }
+
       &.show-md {
-        svg, img {
+
+        svg,
+        img {
           margin-top: .3rem;
+
           @include breakpoint(md) {
             margin-top: 0;
           }
@@ -116,19 +135,22 @@ body.header-fixed.header-animated {
       }
     }
 
-    ~ .mobile-menu .button_container {
+    ~.mobile-menu .button_container {
       top: 0.5rem;
     }
 
-    .external-links-menu a{
+    .external-links-menu a {
       border-radius: 0;
       padding: 10px 20px;
-      span{
+
+      span {
         display: none;
       }
-      &:hover{
+
+      &:hover {
         background: $primary-color;
-        i.fa{
+
+        i.fa {
           color: #fff;
         }
       }

@@ -1,10 +1,15 @@
-<section id="{{ id }}" class="section modular-hero hero {{ page.header.hero_classes }} {{ page.header.hero_overlay ? 'text-light parallax title-h1h2' : '' }} {{ page.header.background.parallax ? 'parallax' : '' }}" {% if hero_image %}style="background-image: url('{{ hero_image.url }}');"{% endif %}>
-    {% if page.header.hero_overlay %} <div class="image-overlay overlay-dark-gradient"></div> {% endif %}
-    <section class="container {{ grid_size }}" style="text-align: {{ page.header.hero_align|default('center') }}">
-        {{ content|raw }}
-        {% if page.header.hero_showsearch and config.plugins.simplesearch.enabled %}
-            {% include 'partials/simplesearch_searchbox.html.twig' %}
-        {% endif %}
-    </section>
-    <i id="to-start" class="pulse fa fa-angle-down"></i>
+<section id="{{ id }}" class="section modular-hero hero {{ page.header.hero_classes }} {{ page.header.hero_overlay ? 'text-light parallax title-h1h2' : '' }} {{ page.header.background.parallax ? 'parallax' : '' }}" {% if hero_image %} style="background-image: url('{{ hero_image.url }}');" {% endif %}>
+	{% if page.header.hero_overlay %}
+		<div class="image-overlay overlay-dark-gradient"></div>
+	{% endif %}
+	<section class="container {{ grid_size }}" style="text-align: {{ page.header.hero_align|default('center') }}">
+		{{ content|raw }}
+		{% if page.header.hero_showsearch and config.plugins.simplesearch.enabled %}
+			{% include 'partials/simplesearch_searchbox.html.twig' %}
+		{% endif %}
+		{% if not page.header.hero_showsearch and config.plugins.tntsearch.enabled %}
+			{% embed 'partials/tntsearch.html.twig' with { limit: 10, snippet: 150, min: 3, search_type: 'auto', dropdown: true } %}{% endembed %}
+		{% endif %}
+	</section>
+	<i id="to-start" class="pulse fa fa-angle-down"></i>
 </section>

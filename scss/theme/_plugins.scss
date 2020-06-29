@@ -2,29 +2,40 @@
 section.search-page {
     padding-left: 2rem;
     padding-right: 2rem;
+
     .search-image {
         img {
             padding: 2px;
             border: $border-width solid $gray-color-light;
             background: $light-color;
-            transition: all .2s linear;
+            transition: all 0.2s linear;
+
             &:hover {
-                opacity: .8;
-                transition: all .3s linear;
+                opacity: 0.8;
+                transition: all 0.3s linear;
             }
         }
     }
+
     .search-item {
         .search-date {
             color: $gray-color;
         }
+
         hr {
-            background-color: $gray-color-light; height: $border-width; border: 0;
+            background-color: $gray-color-light;
+            height: $border-width;
+            border: 0;
         }
     }
 }
-.search-wrapper {
-    .search-input, [data-grav-field="array"] input, [data-grav-field="array"] textarea {
+
+.search-wrapper,
+#tntsearch-wrapper {
+
+    .search-input,
+    [data-grav-field="array"] input,
+    [data-grav-field="array"] textarea {
         width: 60%;
         height: 80px;
         display: inline-block;
@@ -33,7 +44,7 @@ section.search-page {
         padding-left: 55px;
         padding-right: 25px;
         border-bottom: 3px solid $primary-color;
-    
+
         @include breakpoint(sm) {
             width: 90%;
         }
@@ -41,8 +52,9 @@ section.search-page {
 
     .icon-search {
         position: relative;
+
         &:before {
-            font-family: 'FontAwesome';
+            font-family: "FontAwesome";
             display: inline-block;
             font-style: normal;
             font-variant: normal;
@@ -60,13 +72,57 @@ section.search-page {
     }
 }
 
+//TNT Search
+.tntsearch-dropdown~.tntsearch-results .row {
+    width: 100%;
+    color: $dark-color;
+    text-align: left;
+    border-radius: 10px;
+    padding: 20px;
+
+    .result-content {
+        height: 500px;
+        overflow: auto;
+    }
+}
+
+.tntsearch-clear {
+    color: $dark-color;
+    line-height: 3.5rem;
+    top: inherit;
+
+    &:hover {
+        color: red;
+    }
+}
+
+.tntsearch-results {
+    .title {
+        text-transform: uppercase;
+    }
+
+    .route {
+        color: $secondary-color;
+        font-style: italic;
+    }
+
+    .info {
+        text-align: center;
+        font-size: 1rem;
+
+        .hits {
+            font-weight: bold;
+        }
+    }
+}
+
 //Img Captions
 figure {
     figcaption {
         text-align: center;
         color: $gray-color;
         font-style: italic;
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -74,22 +130,26 @@ figure {
 .thumb-ratings {
     .title-thumb {
         color: $gray-color;
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
+
     .thumb {
         &:first-child {
             background-color: $primary-color !important;
-            transition: all .2s linear;
+            transition: all 0.2s linear;
+
             &:hover {
-                transition: all .2s linear;
+                transition: all 0.2s linear;
                 background-color: lighten($success-color, 30%) !important;
             }
         }
+
         &:last-child {
             background-color: $secondary-color !important;
-            transition: all .2s linear;
+            transition: all 0.2s linear;
+
             &:hover {
-                transition: all .2s linear;
+                transition: all 0.2s linear;
                 background-color: lighten($error-color, 10%) !important;
             }
         }
@@ -102,9 +162,11 @@ figure {
     background: $primary-color;
     z-index: 9999;
     border: $border-width solid $primary-color-dark;
+
     &:hover {
         background: $primary-color-dark;
     }
+
     i {
         position: static;
     }
@@ -113,43 +175,51 @@ figure {
 //Snappygrav style override
 .btn-snappygrav {
     .export {
-        padding: .2rem;
+        padding: 0.2rem;
         margin: 0;
-        font-size: .5rem;
+        font-size: 0.5rem;
+
         i.fa {
             color: $error-color;
         }
+
         &:hover {
-            opacity: .8;
+            opacity: 0.8;
         }
     }
 }
-.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons button{
+
+.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons button {
     padding: 0;
+
     &.btn-green {
         background: $primary-color;
+
         &:hover {
             background: $primary-color-light;
         }
     }
+
     &.btn-purple {
         background: $success-color;
+
         &:hover {
             background: lighten($success-color, 10%);
         }
     }
+
     &.btn-gray {
         &:hover {
             background: lighten(#303f53, 10%);
         }
     }
 }
+
 .jconfirm-title-c {
     i.fa {
         color: lighten($error-color, 15%);
     }
 }
-
 
 //External Links
 h1,
@@ -158,7 +228,9 @@ h1,
         display: none;
     }
 }
+
 .title-h1h2 {
+
     h1,
     h2,
     h3 {
@@ -167,9 +239,11 @@ h1,
         }
     }
 }
+
 .btn-primary {
-    &.external-link{
+    &.external-link {
         background: $primary-color !important;
+
         &:focus,
         &:hover {
             background: darken($primary-color-dark, 2%) !important;
@@ -178,13 +252,15 @@ h1,
         }
     }
 }
+
 .btn-success {
-    &.external-link{
+    &.external-link {
         background: $success-color !important;
     }
 }
+
 .btn-error {
-    &.external-link{
+    &.external-link {
         background: $error-color !important;
     }
 }
