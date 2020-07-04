@@ -13,9 +13,9 @@
                    <div class="column {{ columns }}">
                       {% if feature.url %}<a {{ feature.target ? 'target="_blank"' : '' }} href="{{feature.url}}">{% endif %}
                       <div class="feature-icon">
-                         <i class="fa fa-fw {{ feature.icon }}"></i>
+                         <i class="fa fa-fw {{ feature.icon }}" style="color: {{ feature.iconcolor }}"></i>
                          {% if feature.header %}
-                            <h6>{{ feature.header }}</h6>
+                            <h6 style="color: {{ feature.iconcolor }}">{{ feature.header }}</h6>
                          {% endif %}
                       </div>
                       {% if feature.url %}</a>{% endif %}

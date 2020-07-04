@@ -27,6 +27,10 @@ form:
                 .icon:
                   type: iconpicker
                   label: Icon
+                .iconcolor:
+                  type: colorpicker
+                  label: Icon Color
+                  default: '#454d5d'
                 .header:
                   type: text
                   label: Header

@@ -41,6 +41,18 @@ form:
         grid-xl: Extra Large
         grid-lg: Large
         grid-md: Medium
+    
+    layout-list-blog:
+      type: toggle
+      label: Layout List Blog
+      help: Choice the default layout list of blog items
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.COLUMN
+        0: PLUGIN_ADMIN.LIST
+      validate:
+        type: bool
 
     analytics_id:
       type: text

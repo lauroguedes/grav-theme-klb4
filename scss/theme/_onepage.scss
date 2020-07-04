@@ -90,6 +90,10 @@ body::-webkit-scrollbar-thumb {
     &:hover {
       .feature-icon {
         color: $gray-color;
+        i {
+          opacity: .5;
+          transition: opacity .3s linear;
+        }
 
         h6 {
           color: $primary-color;
@@ -117,6 +121,8 @@ body::-webkit-scrollbar-thumb {
       position: absolute;
       left: 50%;
       top: 50%;
+      opacity: .2;
+      transition: opacity .3s linear;
       transform: translateX(-50%) translateY(-50%);
     }
 

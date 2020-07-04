@@ -89,28 +89,92 @@
     &:last-child {
       padding-right: 0;
     }
-  }
-  .card {
-    margin-bottom: 25px;
-    border: 0;
-    box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
-    .card-image img {
-      &:hover {
-        opacity: .8;
-        transition: all .2s linear;
+    .card {
+      margin-bottom: 25px;
+      border: 0;
+      box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
+      .card-image img {
+        &:hover {
+          opacity: .8;
+          transition: all .2s linear;
+        }
+      }
+      .card-title {
+        text-transform: uppercase;
+      }
+      .card-body {
+        display: none;
       }
     }
-    .card-title {
-      text-transform: uppercase;
+
+  
+    .card-footer {
+      text-align: right;
+    }
+  
+    .blog-date {
+      font-size: 13px;
     }
   }
-
-  .card-footer {
-    text-align: right;
+  .bricklayer.row-force {
+    display: block;
+    .bricklayer-column {
+      .card {
+        flex-direction: row;
+        @include breakpoint(xs) {
+          flex-direction: column;
+        }
+        .card-image {
+          max-width: 20%;
+          @include breakpoint(xs) {
+            max-width: 100%;
+          }
+        }
+        .card-body {
+          display: block;
+          padding: 0;
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
   }
-
-  .blog-date {
-    font-size: 13px;
+  .btn-toggle-list-format {
+    padding: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: -23px;
+    position: relative;
+    z-index: 3;
+    @include breakpoint(xs) {
+      display: none;
+    }
+    span {
+      background-color: white;
+      padding: 0 .2rem;
+      border-radius: 4px;
+      border: 1px solid $gray-color-light;
+      box-shadow: 0 0 3px $gray-color;
+      button {
+        color: $primary-color;
+        background: transparent;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        &:hover {
+          opacity: .6;
+        }
+        &:focus {
+          outline: none;
+          outline-offset: -4px;
+        }
+        &:disabled {
+          opacity: .5;
+        }
+      }
+    }
   }
 }
 

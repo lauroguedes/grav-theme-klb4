@@ -32,6 +32,9 @@ en:
     PHRASE: Did this article help you?
   PLUGIN_TNTSEARCH:
     SEARCH_PLACEHOLDER: What you search...
+  PLUGIN_ADMIN:
+    COLUMN: Column
+    LIST: List
 
 pt-BR:
   GRAV:
@@ -95,6 +98,9 @@ pt-BR:
       TOPICS: TÓPICOS
       SECTIONS: SESSÕES
       TAXONOMY: AUTOR/TAGS
+  PLUGIN_ADMIN:
+    COLUMN: Coluna
+    LIST: Lista
   PLUGIN_SIMPLESEARCH:
     SEARCH_PLACEHOLDER: "O que você procura..."
     SEARCH_RESULTS: "Resultados da pesquisa"

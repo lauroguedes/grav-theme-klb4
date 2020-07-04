@@ -5,6 +5,7 @@
 {% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
 {% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+{% set layout_list_blog = theme_var('layout-list-blog') %}
 
 {% block stylesheets %}
     {% do assets.addCss('theme://css/bricklayer.css') %}
@@ -24,6 +25,11 @@
 
 {% block body %}
     <section id="body-wrapper" class="section blog-listing">
+        <div class="btn-toggle-list-format">
+            <span>
+                <button id="show-collumn"><i class="fa fa-columns"></i></button> <button id="show-list"><i class="fa fa-th-list"></i></button>
+            </span>
+        </div>
         <section class="container {{ grid_size }}">
 
         {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
@@ -56,6 +62,27 @@
     <script>
         //Bricklayer
         var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+        var layoutListBlog = "{{ layout_list_blog }}";
+
+        if (!layoutListBlog) {
+            $('.bricklayer').addClass('row-force');
+            $('#show-collumn').prop('disabled', false);
+            $('#show-list').prop('disabled', true);
+        } else {
+            $('#show-list').prop('disabled', false);
+            $('#show-collumn').prop('disabled', true);
+        }
+
+        $('#show-collumn').on('click', function (e) {
+            $('.bricklayer').removeClass('row-force');
+            $('#show-list').prop('disabled', false);
+            $(this).prop('disabled', true);
+        })
+        $('#show-list').on('click', function (e) {
+            $('.bricklayer').addClass('row-force');
+            $('#show-collumn').prop('disabled', false);
+            $(this).prop('disabled', true);
+        })
     </script>
 
 {% endblock %}

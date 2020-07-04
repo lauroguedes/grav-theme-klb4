@@ -1,6 +1,7 @@
 enabled: true
 production-mode: true
 grid-size: grid-xl
+layout-list-blog: true
 header-fixed: true
 header-animated: true
 header-dark: false
@@ -32,3 +33,8 @@ header-externallinks:
     url: 'https://github.com/lauroguedes/grav-theme-klb4/issues'
     icon: 'fa fa-bug'
     target: true
+  -
+    text: 'Search'
+    url: '/search'
+    icon: 'fa fa-search'
+    target: false
