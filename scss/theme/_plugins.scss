@@ -102,8 +102,9 @@ section.search-page {
     }
 
     .route {
-        color: $secondary-color;
+        color: $accent-color;
         font-style: italic;
+        opacity: .6;
     }
 
     .info {
