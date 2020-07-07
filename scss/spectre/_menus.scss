@@ -1,6 +1,6 @@
 // Menus
-.menu {
-  @include shadow-variant(.05rem);
+.sidebar-content.menu ul {
+  //@include shadow-variant(.05rem);
   background: $bg-color-light;
   border-radius: $border-radius;
   list-style: none;
@@ -15,18 +15,23 @@
     box-shadow: none;
   }
 
-  .menu-item {
+  li {
     margin-top: 0;
     padding: 0 $unit-2;
     position: relative;
     text-decoration: none;
+    border-bottom: 1px dashed $border-color;
+    
+    &:last-child {
+      border-bottom: none;
+    }
 
     & > a {
       border-radius: $border-radius;
       color: inherit;
       display: block;
       margin: 0 (-$unit-2);
-      padding: $unit-1 $unit-2;
+      padding: .5rem $unit-3;
       text-decoration: none;
       &:focus,
       &:hover {
@@ -62,5 +67,11 @@
     .label {
       margin-right: $unit-2;
     }
+  }
+  &.custom-sticker-content {
+    top: 45px !important;
+    box-shadow: 0 0 3px $gray-color;
+    margin-top: 1rem;
+    transition: all .2s linear;
   }
 }

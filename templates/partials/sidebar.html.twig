@@ -7,11 +7,11 @@
 {% set terms = page.header.terms?: '' %}
 
 {% if articles.collection().count > 0 %}
-    <div class="sidebar-content">
-        <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
-        <ul class="menu">
+    <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.TOPICS'|t }}"></div>
+    <div class="sidebar-content menu">
+        <ul>
             {% for p in articles.collection()%}
-                <li class="menu-item"><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
+                <li><a href="{{ p.url }}" title="{{ p.title }}">{{ p.title|truncate(20, true) }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -19,7 +19,7 @@
 
 {% if show_sectionanchors and config.plugins.anchors.enabled %}
     <div class="divider text-center" data-content="{{ 'THEME_KLB4.DIVIDERS.SECTIONS'|t }}"></div>
-    <div class="sidebar-content">
+    <div class="sidebar-content menu">
         {{ anchors(page.content, tagtitle, terms) }}
     </div>
 {% endif %}
