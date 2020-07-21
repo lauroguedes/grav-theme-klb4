@@ -1,8 +1,11 @@
 <a href="{{ home_url }}" class="navbar-brand mr-10">
 {% if logo %}
   {% set logo_file = (logo|first).name %}
-  {% include('@images/logo/'~logo_file) %}
-  {#<img src="{{ url('theme://images/logo/' ~ logo_file)  }}" alt="{{ site.name }}" />#}
+  {% if logo_file|ends_with('.svg') %}
+    {% include('@images/logo/'~logo_file) %}
+  {% else %}
+    <img src="{{ url('theme://images/logo/' ~ logo_file)  }}" alt="{{ site.name }}" />
+  {% endif %}
 {% else %}
     {% include('@images/klb4-logo.svg') %}
 {% endif %}

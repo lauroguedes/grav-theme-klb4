@@ -64,9 +64,13 @@
   }
 
   .logo {
-
     svg,
     img {
+      display: inherit;
+      @extend .default-animation;
+    }
+
+    svg {
       width: 250px;
       height: 70px;
 
@@ -74,16 +78,16 @@
         width: 200px;
         height: 56px;
       }
+    }
 
-      display: inherit;
-      @extend .default-animation;
+    img {
+      max-height: 4rem;
     }
 
     &.show-md {
-
       svg,
       img {
-        margin-top: .7rem;
+        margin-top: 0.7rem;
 
         @include breakpoint(md) {
           margin-top: 0;
@@ -110,9 +114,7 @@ body.header-fixed.header-animated {
     }
 
     .logo {
-
-      svg,
-      img {
+      svg {
         width: 150px;
         height: 42px;
 
@@ -122,11 +124,14 @@ body.header-fixed.header-animated {
         }
       }
 
-      &.show-md {
+      img {
+        max-height: 2.3rem;
+      }
 
+      &.show-md {
         svg,
         img {
-          margin-top: .3rem;
+          margin-top: 0.3rem;
 
           @include breakpoint(md) {
             margin-top: 0;
@@ -135,7 +140,7 @@ body.header-fixed.header-animated {
       }
     }
 
-    ~.mobile-menu .button_container {
+    ~ .mobile-menu .button_container {
       top: 0.5rem;
     }
 
@@ -155,7 +160,6 @@ body.header-fixed.header-animated {
         }
       }
     }
-
   }
 }
 
