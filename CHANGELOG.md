@@ -1,3 +1,16 @@
+# v1.2.2
+## 07/22/2020
+
+1. [](#bugfix)
+   * Fix Z-index element change blog list layout
+   * Fix padding-right of last child item list layout
+
+# v1.2.1
+## 07/22/2020
+
+1. [](#bugfix)
+   * Fix Changelog
+
 # v1.2.0
 ## 07/21/2020
 
